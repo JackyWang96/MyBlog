@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jack Wang</title>
+    <link>http://zintrulcre.github.io/</link>
+    <description>Recent content on Jack Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://zintrulcre.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://zintrulcre.github.io/about/</link>
+      <pubDate>Sun, 18 Dec 2022 21:48:35 +0800</pubDate>
+      
+      <guid>http://zintrulcre.github.io/about/</guid>
+      <description>Hi, I&amp;rsquo;m Jack 👋 👤 Currently Software Development Engineer at Department of Education Victoria.
+📷 Enthusiastic in fitness, photography, travelling, reading &amp;amp; video games.
+📄 Checkout my resume: English / 简体中文
+✉️ Contact me at JackyWangMel96@gmail.com</description>
+    </item>
+    
+    
+  </channel>
+</rss>
