@@ -11,6 +11,6 @@ showtoc: false
 
 - 📷 Enthusiastic in fitness, photography, travelling, reading & video games.
 
-- 📄 Checkout my resume: [English](https://raw.githubusercontent.com/JackyWang96/MyBlog/hugoblog/resources/ZeyuWang_resume.pdf) / [简体中文](https://raw.githubusercontent.com/ZintrulCre/hugo-site/master/resources/Zhengyu%20Chen%202022%20Chinese.png)
+- 📄 Checkout my resume: [English](https://github.com/JackyWang96/MyBlog/blob/master/resources/ZeyuWang_resume.pdf) / [简体中文](https://raw.githubusercontent.com/ZintrulCre/hugo-site/master/resources/Zhengyu%20Chen%202022%20Chinese.png)
 
 - ✉️ Contact me at <JackyWangMel96@gmail.com>
