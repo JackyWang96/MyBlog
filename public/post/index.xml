@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Jack Wang</title>
-    <link>https://jackywang96.github.io/BlogSite/</link>
-    <description>Recent content on Jack Wang</description>
+    <title>Posts on Jack Wang</title>
+    <link>https://jackywang96.github.io/BlogSite/post/</link>
+    <description>Recent content in Posts on Jack Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jan 2023 23:34:06 +1100</lastBuildDate><atom:link href="https://jackywang96.github.io/BlogSite/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2023 23:34:06 +1100</lastBuildDate><atom:link href="https://jackywang96.github.io/BlogSite/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fast,Slow pointer--Floyd circle method</title>
       <link>https://jackywang96.github.io/BlogSite/post/fast-slow-pointer-floyd-circle-method/fast-slow-pointer/</link>
@@ -46,19 +46,6 @@ right join (right join): Returns all records including all records in the right 
       <guid>https://jackywang96.github.io/BlogSite/post/my-first-post/</guid>
       <description>Hi, I&amp;rsquo;m Jack 👋 This is my first post. Welcome to my Blog</description>
     </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://jackywang96.github.io/BlogSite/about/</link>
-      <pubDate>Sun, 18 Dec 2022 21:48:35 +0800</pubDate>
-      
-      <guid>https://jackywang96.github.io/BlogSite/about/</guid>
-      <description>Hi, I&amp;rsquo;m Jack 👋 👤 Currently Software Development Engineer at Department of Education Victoria.
-📷 Enthusiastic in fitness, photography, travelling, reading &amp;amp; video games.
-📄 Checkout my resume: English / [简体中文]
-✉️ Contact me at JackyWangMel96@gmail.com</description>
-    </item>
-    
     
   </channel>
 </rss>
