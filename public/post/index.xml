@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Jack Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jan 2023 23:34:06 +1100</lastBuildDate><atom:link href="https://jackywang96.github.io/BlogSite/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 00:55:45 +1100</lastBuildDate><atom:link href="https://jackywang96.github.io/BlogSite/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TailwindCSS</title>
+      <link>https://jackywang96.github.io/BlogSite/post/tailwindcss/</link>
+      <pubDate>Tue, 14 Feb 2023 00:55:45 +1100</pubDate>
+      
+      <guid>https://jackywang96.github.io/BlogSite/post/tailwindcss/</guid>
+      <description>Introduction Tailwind CSS is a CSS styling library that provides us with all the building blocks we need to build custom designs without using custom styles.
+Feature Tailwind will automatically delete all unused CSS when building production files, so its size in the actual production environment is very small, and it is considered to be the CSS style library with the most design sense.
+Installation //Install Tailwind CSS npm install -D tailwindcss npx tailwindcss init //Add the paths to all of your template files in your tailwind.</description>
+    </item>
+    
     <item>
       <title>Fast,Slow pointer--Floyd circle method</title>
       <link>https://jackywang96.github.io/BlogSite/post/fast-slow-pointer-floyd-circle-method/fast-slow-pointer/</link>
