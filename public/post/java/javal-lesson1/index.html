@@ -1,0 +1,116 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Java Lesson1 Note | Jack Wang</title><meta name=keywords content><meta name=description content="Introduction 今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。
+Content 1. Java是什么样的语言 简单而言，使用JDK 的开发工具完成的java 程序，交给JRE 去运行
+- 面向对象: OOD（Object Oriented Programming）POP（Prodedure Oriented Programming）
+面向对象好在哪：POP小公司人少，所有安排事情是-你去干啥，他去干啥
+OOD: 大公司人多，分成多个部门，按职能分派任务
+三大特性：封装、继承、多态: 封装 用一个method隐藏赋值的过程、把属性变为private。只有外界用method去调用 public, private, default
+继承 inheritance； Child and parent class
+多态 overload
+- 健壮性: 吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如指针、 内存的申请与释放等），提供了一个相对安全的内存管理和访问机制。
+- 跨平台性: 跨平台性：通过Java 语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere” 原理：只要在需要运行java 应用程序的操作系统上，先安装一个Java 虚拟机 (JVM Java Virtual Machine) 即可。由JVM 来负责Java 程序在该系统中的运行。
+Java 两种核心机制-Java VirtalMachine，Garbage Collection
+2. 基本语法 2.1 Java 中的名称命名规范 Package name: ：多单词组成时所有字母都小写：xxxyyyzzz Class、interface：所有单词的首字母大写：XxxYyyZzz 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ"><meta name=author content><link rel=canonical href=https://jackywang96.github.io/BlogSite/post/java/javal-lesson1/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/BlogSite/assets/css/stylesheet.96899f97d8f8189d0ff2f895ef7d104ef2a38fa0104562f554c249c6476eda64.css integrity rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/BlogSite/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-132809676-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Java Lesson1 Note"><meta property="og:description" content="Introduction 今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。
+Content 1. Java是什么样的语言 简单而言，使用JDK 的开发工具完成的java 程序，交给JRE 去运行
+- 面向对象: OOD（Object Oriented Programming）POP（Prodedure Oriented Programming）
+面向对象好在哪：POP小公司人少，所有安排事情是-你去干啥，他去干啥
+OOD: 大公司人多，分成多个部门，按职能分派任务
+三大特性：封装、继承、多态: 封装 用一个method隐藏赋值的过程、把属性变为private。只有外界用method去调用 public, private, default
+继承 inheritance； Child and parent class
+多态 overload
+- 健壮性: 吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如指针、 内存的申请与释放等），提供了一个相对安全的内存管理和访问机制。
+- 跨平台性: 跨平台性：通过Java 语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere” 原理：只要在需要运行java 应用程序的操作系统上，先安装一个Java 虚拟机 (JVM Java Virtual Machine) 即可。由JVM 来负责Java 程序在该系统中的运行。
+Java 两种核心机制-Java VirtalMachine，Garbage Collection
+2. 基本语法 2.1 Java 中的名称命名规范 Package name: ：多单词组成时所有字母都小写：xxxyyyzzz Class、interface：所有单词的首字母大写：XxxYyyZzz 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ"><meta property="og:type" content="article"><meta property="og:url" content="https://jackywang96.github.io/BlogSite/post/java/javal-lesson1/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-03-30T00:19:17+11:00"><meta property="article:modified_time" content="2023-03-30T00:19:17+11:00"><meta property="og:site_name" content="Jack Wang"><meta name=twitter:card content="summary"><meta name=twitter:title content="Java Lesson1 Note"><meta name=twitter:description content="Introduction 今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。
+Content 1. Java是什么样的语言 简单而言，使用JDK 的开发工具完成的java 程序，交给JRE 去运行
+- 面向对象: OOD（Object Oriented Programming）POP（Prodedure Oriented Programming）
+面向对象好在哪：POP小公司人少，所有安排事情是-你去干啥，他去干啥
+OOD: 大公司人多，分成多个部门，按职能分派任务
+三大特性：封装、继承、多态: 封装 用一个method隐藏赋值的过程、把属性变为private。只有外界用method去调用 public, private, default
+继承 inheritance； Child and parent class
+多态 overload
+- 健壮性: 吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如指针、 内存的申请与释放等），提供了一个相对安全的内存管理和访问机制。
+- 跨平台性: 跨平台性：通过Java 语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere” 原理：只要在需要运行java 应用程序的操作系统上，先安装一个Java 虚拟机 (JVM Java Virtual Machine) 即可。由JVM 来负责Java 程序在该系统中的运行。
+Java 两种核心机制-Java VirtalMachine，Garbage Collection
+2. 基本语法 2.1 Java 中的名称命名规范 Package name: ：多单词组成时所有字母都小写：xxxyyyzzz Class、interface：所有单词的首字母大写：XxxYyyZzz 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://jackywang96.github.io/BlogSite/post/"},{"@type":"ListItem","position":2,"name":"Java Lesson1 Note","item":"https://jackywang96.github.io/BlogSite/post/java/javal-lesson1/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Java Lesson1 Note","name":"Java Lesson1 Note","description":"Introduction 今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。\nContent 1. Java是什么样的语言 简单而言，使用JDK 的开发工具完成的java 程序，交给JRE 去运行\n- 面向对象: OOD（Object Oriented Programming）POP（Prodedure Oriented Programming）\n面向对象好在哪：POP小公司人少，所有安排事情是-你去干啥，他去干啥\nOOD: 大公司人多，分成多个部门，按职能分派任务\n三大特性：封装、继承、多态: 封装 用一个method隐藏赋值的过程、把属性变为private。只有外界用method去调用 public, private, default\n继承 inheritance； Child and parent class\n多态 overload\n- 健壮性: 吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如指针、 内存的申请与释放等），提供了一个相对安全的内存管理和访问机制。\n- 跨平台性: 跨平台性：通过Java 语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere” 原理：只要在需要运行java 应用程序的操作系统上，先安装一个Java 虚拟机 (JVM Java Virtual Machine) 即可。由JVM 来负责Java 程序在该系统中的运行。\nJava 两种核心机制-Java VirtalMachine，Garbage Collection\n2. 基本语法 2.1 Java 中的名称命名规范 Package name: ：多单词组成时所有字母都小写：xxxyyyzzz Class、interface：所有单词的首字母大写：XxxYyyZzz 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ","keywords":[],"articleBody":"Introduction 今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。\nContent 1. Java是什么样的语言 简单而言，使用JDK 的开发工具完成的java 程序，交给JRE 去运行\n- 面向对象: OOD（Object Oriented Programming）POP（Prodedure Oriented Programming）\n面向对象好在哪：POP小公司人少，所有安排事情是-你去干啥，他去干啥\nOOD: 大公司人多，分成多个部门，按职能分派任务\n三大特性：封装、继承、多态: 封装 用一个method隐藏赋值的过程、把属性变为private。只有外界用method去调用 public, private, default\n继承 inheritance； Child and parent class\n多态 overload\n- 健壮性: 吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如指针、 内存的申请与释放等），提供了一个相对安全的内存管理和访问机制。\n- 跨平台性: 跨平台性：通过Java 语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere” 原理：只要在需要运行java 应用程序的操作系统上，先安装一个Java 虚拟机 (JVM Java Virtual Machine) 即可。由JVM 来负责Java 程序在该系统中的运行。\nJava 两种核心机制-Java VirtalMachine，Garbage Collection\n2. 基本语法 2.1 Java 中的名称命名规范 Package name: ：多单词组成时所有字母都小写：xxxyyyzzz Class、interface：所有单词的首字母大写：XxxYyyZzz 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ\n2.2 基本数据类型 变量按照数据类型来分： 基本数据类型：\n整型：byte \\ short \\ int \\ long\n浮点型：float \\ double\n字符型：char\n布尔型：boolean\n引用数据类型：\n类：class\n接口：interface\n数组：array\n2.3 字符串类型：String String 类型变量的使用：\nString 属于引用数据类型 。 声明String 类型变量时，使用一对\"\" 。 String 可以和8 种基本数据类型变量做运算， 且运算只能是连接运算；+ 运算的结果任然是String 类型。 2.4 强制类型转换 自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符：()，但可能造成精度降低或溢出, 格外要注意。 通常，字符串不能直接转换为基本类型，但通过基本类型对应的包装类则可以实现把字符串转换成基本类型。\n如：String a = “43”;\ninti= Integer.parseInt(a);\nboolean 类型不可以转换为其它的数据类型。\n2.5 运算符 % 取余 7%5=2\n++ a=2; b=a++; a=2;b=3\n扩展赋值运算符：+=, -=, *=, /=, %=\n逻辑运算符\na||b a\u0026\u0026b\n2.6 顺序结构 public class Test{ int num1 = 12; int num2 = num1 + 2; } // 错误形式： public class Test{ int num2 = num1 + 2; int num1 = 12; } 2.7 判断语句 2.7.1、分支语句：if-else 结构 if(X\u003e=0){ return result } else if(x\u003c0\u003e){ return 1; } else{ return 0; } 2.8. 循环结构 2.8.1 for 循环 // 遍历100 以内的偶数, 获取所有偶数的和, 输出偶数的个数 int sum=0; int count=0; for(int i=1; i\u003c=100; i++){ if(i%2==0){ System.out.println(i); sum += i; count++ } } System.out.println(“100 以内的偶数的和：” + sum); System.out.println(\" 个数为：\" + count);\n2.8.2 while 循环 class WhileTest{ public static void main(String[] args){ // 遍历100 以内的所有偶数 int i = 1; while(i \u003c= 100){ if(i % 2 == 0){ System.out.println(i); } i++; } } } 2.8.3 do-while 循环 int i = 0; do { System.out.println(i); i++; } while (i \u003c 5); 2.9. break、continue 的使用 break 语句用于终止某个语句块的执行\n{ ...... break; ...... } continue 的使用 continue 语句：continue 只能使用在循环结构中。\ncontinue 语句用于跳过其所在循环语句块的一次执行，继续下一次 循环。\nreturn return：并非专门用于结束循环的，它的功能是结束一个方法。当一 个方法执行到一个return 语句时，这个方法将被结束。\n与break 和continue 不同的是，return 直接结束整个方法，不管这个 return 处于多少层循环之内。\n课后作业 目标\n需求说明\n基本金和收支明细的记录\n模拟实现一个基于文本界面的《家庭记账软件》。\n主要掌握以下知识点： 变量的定义， 基本数据类型的使用， 循环语句， 分支语句， 方法声明、调用和返回值的接收， 简单的屏幕输出格式控制 模拟实现基于文本界面的《家庭记账软件》。 该软件能够记录家庭收入、支出，并能够打印收支明细表。\n项目采用分级菜单方式。主菜单如下：\n————- 家庭收支记账软件————-\n收支明细 登记收入 登记支出 退 出 请选择(1-4): ","wordCount":"318","inLanguage":"en","datePublished":"2023-03-30T00:19:17+11:00","dateModified":"2023-03-30T00:19:17+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jackywang96.github.io/BlogSite/post/java/javal-lesson1/"},"publisher":{"@type":"Organization","name":"Jack Wang","logo":{"@type":"ImageObject","url":"https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://jackywang96.github.io/BlogSite/ accesskey=h title="Home (Alt + H)">Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://jackywang96.github.io/BlogSite/archives/ title=Posts><span>Posts</span></a></li><li><a href=https://jackywang96.github.io/BlogSite/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://jackywang96.github.io/BlogSite/>Home</a>&nbsp;»&nbsp;<a href=https://jackywang96.github.io/BlogSite/post/>Posts</a></div><h1 class=post-title>Java Lesson1 Note</h1><div class=post-meta><span title='2023-03-30 00:19:17 +1100 AEDT'>March 30, 2023</span>&nbsp;·&nbsp;2 min</div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#introduction aria-label=Introduction>Introduction</a></li><li><a href=#content aria-label=Content>Content</a><ul><li><a href=#1-java%e6%98%af%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84%e8%af%ad%e8%a8%80 aria-label="1. Java是什么样的语言">1. Java是什么样的语言</a><ul><li><a href=#--%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1 aria-label="- 面向对象:">- <strong>面向对象:</strong></a></li><li><a href=#--%e5%81%a5%e5%a3%ae%e6%80%a7 aria-label="- 健壮性:">- <strong>健壮性:</strong></a></li><li><a href=#--%e8%b7%a8%e5%b9%b3%e5%8f%b0%e6%80%a7 aria-label="- 跨平台性:">- <strong>跨平台性:</strong></a></li></ul></li><li><a href=#2-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95 aria-label="2. 基本语法">2. 基本语法</a><ul><li><a href=#21-java-%e4%b8%ad%e7%9a%84%e5%90%8d%e7%a7%b0%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83 aria-label="2.1 Java 中的名称命名规范">2.1 Java 中的名称命名规范</a></li><li><a href=#22-%e5%9f%ba%e6%9c%ac%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b aria-label="2.2 基本数据类型">2.2 基本数据类型</a></li><li><a href=#23-%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%b1%bb%e5%9e%8bstring aria-label="2.3 字符串类型：String">2.3 字符串类型：String</a></li><li><a href=#24-%e5%bc%ba%e5%88%b6%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2 aria-label="2.4 强制类型转换">2.4 强制类型转换</a></li><li><a href=#25-%e8%bf%90%e7%ae%97%e7%ac%a6 aria-label="2.5 运算符">2.5 运算符</a></li><li><a href=#26-%e9%a1%ba%e5%ba%8f%e7%bb%93%e6%9e%84 aria-label="2.6 顺序结构">2.6 顺序结构</a></li><li><a href=#27-%e5%88%a4%e6%96%ad%e8%af%ad%e5%8f%a5 aria-label="2.7 判断语句">2.7 判断语句</a><ul><li><a href=#271%e5%88%86%e6%94%af%e8%af%ad%e5%8f%a5if-else-%e7%bb%93%e6%9e%84 aria-label="2.7.1、分支语句：if-else 结构">2.7.1、分支语句：if-else 结构</a></li></ul></li><li><a href=#28-%e5%be%aa%e7%8e%af%e7%bb%93%e6%9e%84 aria-label="2.8. 循环结构">2.8. 循环结构</a><ul><ul><li><a href=#281-for-%e5%be%aa%e7%8e%af aria-label="2.8.1 for 循环">2.8.1 for 循环</a></li><li><a href=#282-while-%e5%be%aa%e7%8e%af aria-label="2.8.2 while 循环">2.8.2 while 循环</a></li></ul><li><a href=#283-do-while-%e5%be%aa%e7%8e%af aria-label="2.8.3 do-while 循环">2.8.3 do-while 循环</a></li></ul></li><li><a href=#29-breakcontinue-%e7%9a%84%e4%bd%bf%e7%94%a8 aria-label="2.9. break、continue 的使用">2.9. break、continue 的使用</a></li><li><a href=#%e8%af%be%e5%90%8e%e4%bd%9c%e4%b8%9a aria-label=课后作业>课后作业</a></li></ul></li></ul></li></ul></div></details></div><div class=post-content><h1 id=introduction>Introduction<a hidden class=anchor aria-hidden=true href=#introduction>#</a></h1><p>今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。</p><h1 id=content>Content<a hidden class=anchor aria-hidden=true href=#content>#</a></h1><h2 id=1-java是什么样的语言>1. Java是什么样的语言<a hidden class=anchor aria-hidden=true href=#1-java是什么样的语言>#</a></h2><p>简单而言，使用JDK 的开发工具完成的java 程序，交给JRE 去运行</p><h3 id=--面向对象>- <strong>面向对象:</strong><a hidden class=anchor aria-hidden=true href=#--面向对象>#</a></h3><p>OOD（Object Oriented Programming）POP（Prodedure Oriented Programming）</p><p>面向对象好在哪：POP小公司人少，所有安排事情是-你去干啥，他去干啥</p><p>OOD: 大公司人多，分成多个部门，按职能分派任务</p><ul><li><strong>三大特性：封装、继承、多态:</strong></li></ul><ol><li><p>封装
+用一个method隐藏赋值的过程、把属性变为private。只有外界用method去调用
+public, private, default</p></li><li><p>继承
+inheritance； Child and parent class</p></li><li><p>多态
+overload</p></li></ol><h3 id=--健壮性>- <strong>健壮性:</strong><a hidden class=anchor aria-hidden=true href=#--健壮性>#</a></h3><p>吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如指针、
+内存的申请与释放等），提供了一个相对安全的内存管理和访问机制。</p><h3 id=--跨平台性>- <strong>跨平台性:</strong><a hidden class=anchor aria-hidden=true href=#--跨平台性>#</a></h3><p>跨平台性：通过Java 语言编写的应用程序在不同的系统平台上都可以运行。“Write once , Run Anywhere”
+原理：只要在需要运行java 应用程序的操作系统上，先安装一个Java 虚拟机
+(JVM Java Virtual Machine) 即可。由JVM 来负责Java 程序在该系统中的运行。</p><p>Java 两种核心机制-Java VirtalMachine，Garbage Collection</p><h2 id=2-基本语法>2. 基本语法<a hidden class=anchor aria-hidden=true href=#2-基本语法>#</a></h2><h3 id=21-java-中的名称命名规范>2.1 Java 中的名称命名规范<a hidden class=anchor aria-hidden=true href=#21-java-中的名称命名规范>#</a></h3><p>Package name: ：多单词组成时所有字母都小写：xxxyyyzzz
+Class、interface：所有单词的首字母大写：XxxYyyZzz
+变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz
+常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ</p><h3 id=22-基本数据类型>2.2 基本数据类型<a hidden class=anchor aria-hidden=true href=#22-基本数据类型>#</a></h3><p>变量按照数据类型来分：
+基本数据类型：</p><p>整型：byte \ short \ int \ long</p><p>浮点型：float \ double</p><p>字符型：char</p><p>布尔型：boolean</p><p>引用数据类型：</p><p>类：class</p><p>接口：interface</p><p>数组：array</p><h3 id=23-字符串类型string>2.3 字符串类型：String<a hidden class=anchor aria-hidden=true href=#23-字符串类型string>#</a></h3><p>String 类型变量的使用：</p><ol><li>String 属于引用数据类型 。</li><li>声明String 类型变量时，使用一对"" 。</li><li>String 可以和8 种基本数据类型变量做运算，
+且运算只能是连接运算；+</li><li>运算的结果任然是String 类型。</li></ol><h3 id=24-强制类型转换>2.4 强制类型转换<a hidden class=anchor aria-hidden=true href=#24-强制类型转换>#</a></h3><p>自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符：()，但可能造成<strong>精度降低或溢出</strong>, 格外要注意。
+通常，字符串不能直接转换为基本类型，但通过基本类型对应的包装类则可以实现把字符串转换成基本类型。</p><p>如：String a = “43”;</p><p>inti= Integer.parseInt(a);</p><p>boolean 类型不可以转换为其它的数据类型。</p><h3 id=25-运算符>2.5 运算符<a hidden class=anchor aria-hidden=true href=#25-运算符>#</a></h3><p>% 取余 7%5=2</p><p>++ a=2; b=a++; a=2;b=3</p><p>扩展赋值运算符：+=, -=, *=, /=, %=</p><p>逻辑运算符</p><p>a||b a&&b</p><h3 id=26-顺序结构>2.6 顺序结构<a hidden class=anchor aria-hidden=true href=#26-顺序结构>#</a></h3><pre><code>public class Test{
+int num1 = 12;
+int num2 = num1 + 2;
+}
+
+// 错误形式：
+public class Test{
+int num2 = num1 + 2;
+int num1 = 12;
+}
+</code></pre><h3 id=27-判断语句>2.7 判断语句<a hidden class=anchor aria-hidden=true href=#27-判断语句>#</a></h3><h4 id=271分支语句if-else-结构>2.7.1、分支语句：if-else 结构<a hidden class=anchor aria-hidden=true href=#271分支语句if-else-结构>#</a></h4><pre><code>if(X&gt;=0){
+    return result
+}
+else if(x&lt;0&gt;){
+    return 1;
+}
+else{
+    return 0;
+    }
+</code></pre><h3 id=28-循环结构>2.8. 循环结构<a hidden class=anchor aria-hidden=true href=#28-循环结构>#</a></h3><h5 id=281-for-循环>2.8.1 for 循环<a hidden class=anchor aria-hidden=true href=#281-for-循环>#</a></h5><p>// 遍历100 以内的偶数, 获取所有偶数的和, 输出偶数的个数
+int sum=0;
+int count=0;
+for(int i=1; i&lt;=100; i++){
+if(i%2==0){
+System.out.println(i);
+sum += i;
+count++
+}
+}
+System.out.println(&ldquo;100 以内的偶数的和：&rdquo; + sum);
+System.out.println(" 个数为：" + count);</p><h5 id=282-while-循环>2.8.2 while 循环<a hidden class=anchor aria-hidden=true href=#282-while-循环>#</a></h5><pre><code>class WhileTest{
+public static void main(String[] args){
+// 遍历100 以内的所有偶数
+int i = 1;
+while(i &lt;= 100){
+if(i % 2 == 0){
+System.out.println(i);
+} i++;
+}
+}
+}
+</code></pre><h4 id=283-do-while-循环>2.8.3 do-while 循环<a hidden class=anchor aria-hidden=true href=#283-do-while-循环>#</a></h4><pre><code>int i = 0;
+
+do {
+System.out.println(i);
+i++;
+} while (i &lt; 5);
+</code></pre><h3 id=29-breakcontinue-的使用>2.9. break、continue 的使用<a hidden class=anchor aria-hidden=true href=#29-breakcontinue-的使用>#</a></h3><ol><li><p>break 语句用于终止某个语句块的执行</p><pre><code> {
+ ......
+ break;
+ ......
+ }
+</code></pre></li><li><p>continue 的使用
+continue 语句：continue 只能使用在循环结构中。</p></li></ol><p>continue 语句用于跳过其所在循环语句块的一次执行，继续下一次
+循环。</p><ol start=3><li>return</li></ol><p>return：并非专门用于结束循环的，它的功能是结束一个方法。当一
+个方法执行到一个return 语句时，这个方法将被结束。</p><p>与break 和continue 不同的是，return 直接结束整个方法，不管这个
+return 处于多少层循环之内。</p><h3 id=课后作业>课后作业<a hidden class=anchor aria-hidden=true href=#课后作业>#</a></h3><p>目标</p><p>需求说明</p><p>基本金和收支明细的记录</p><p>模拟实现一个基于文本界面的《家庭记账软件》。</p><p>主要掌握以下知识点：
+变量的定义，
+基本数据类型的使用，
+循环语句，
+分支语句，
+方法声明、调用和返回值的接收，
+简单的屏幕输出格式控制
+模拟实现基于文本界面的《家庭记账软件》。
+该软件能够记录家庭收入、支出，并能够打印收支明细表。</p><p>项目采用分级菜单方式。主菜单如下：</p><p>&mdash;&mdash;&mdash;&mdash;- 家庭收支记账软件&mdash;&mdash;&mdash;&mdash;-</p><ol><li>收支明细</li><li>登记收入</li><li>登记支出</li><li>退 出
+请选择(1-4):</li></ol></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=next href=https://jackywang96.github.io/BlogSite/post/big-data/spark-learning-2/><span class=title>Next »</span><br><span>Big Data Learning Day-2</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://jackywang96.github.io/BlogSite/>Jack Wang</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
