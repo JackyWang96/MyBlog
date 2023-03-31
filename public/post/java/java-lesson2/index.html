@@ -1,0 +1,116 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Java Lesson2 Note | Jack Wang</title><meta name=keywords content><meta name=description content="Introduction Today will introduce Java&rsquo;s arrays and their applied algorithms
+今天将介绍Java的数组及其应用的算法
+Content 3. 数 组 数组(Array)，是多个相同类型数据按一定顺序排列的集合， 并使用一个名字命名，并通过编号的方式对这些数据进行统一管理。
+数组里的相关概念
+Array name Elements Index length 3.1 一维数组的使用 用以下的方式熟悉一维数组
+一维数组的声明和初始化 如何调用数组的指定位置的元素 如何获取数组的长度 如何遍历数组 数组元素的默认初始化值 3.2 多维数组的使用 对于二维数组的理解，我们可以看成是一维数组array1 又作为另一个一维数组array2 的元素而存在。 其实，从数组底层的运行机制来看，其实没有多维数组。
+public class ArrayTest2 { public static void main(String[] args) { //1. 二维数组的声明和初始化 int[] arr = new int[]{1,2,3}; // 静态初始化 int[][] arr1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // 动态初始化1 String[][] arr2 = new String[3][2]; // 动态初始化2 String[][] arr3 = new String[3][]; // 错误的情况 // String[][] arr4 = new String[][]; // String[][] arr5 = new String[][4]; // String[][] arr6 = new String[4][3]{{1,2,3},{4,5,6},{7,8,9}}; // 正确的情况： int arr4[][] = new int[][]{{1,2,3},{4,5,12,6},{7,8,9}}; int[] arr5[] = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr6 = {{1,2,3},{4,5,6},{7,8,9}}; //2."><meta name=author content><link rel=canonical href=https://jackywang96.github.io/BlogSite/post/java/java-lesson2/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/BlogSite/assets/css/stylesheet.96899f97d8f8189d0ff2f895ef7d104ef2a38fa0104562f554c249c6476eda64.css integrity rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/BlogSite/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-132809676-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Java Lesson2 Note"><meta property="og:description" content="Introduction Today will introduce Java&rsquo;s arrays and their applied algorithms
+今天将介绍Java的数组及其应用的算法
+Content 3. 数 组 数组(Array)，是多个相同类型数据按一定顺序排列的集合， 并使用一个名字命名，并通过编号的方式对这些数据进行统一管理。
+数组里的相关概念
+Array name Elements Index length 3.1 一维数组的使用 用以下的方式熟悉一维数组
+一维数组的声明和初始化 如何调用数组的指定位置的元素 如何获取数组的长度 如何遍历数组 数组元素的默认初始化值 3.2 多维数组的使用 对于二维数组的理解，我们可以看成是一维数组array1 又作为另一个一维数组array2 的元素而存在。 其实，从数组底层的运行机制来看，其实没有多维数组。
+public class ArrayTest2 { public static void main(String[] args) { //1. 二维数组的声明和初始化 int[] arr = new int[]{1,2,3}; // 静态初始化 int[][] arr1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // 动态初始化1 String[][] arr2 = new String[3][2]; // 动态初始化2 String[][] arr3 = new String[3][]; // 错误的情况 // String[][] arr4 = new String[][]; // String[][] arr5 = new String[][4]; // String[][] arr6 = new String[4][3]{{1,2,3},{4,5,6},{7,8,9}}; // 正确的情况： int arr4[][] = new int[][]{{1,2,3},{4,5,12,6},{7,8,9}}; int[] arr5[] = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr6 = {{1,2,3},{4,5,6},{7,8,9}}; //2."><meta property="og:type" content="article"><meta property="og:url" content="https://jackywang96.github.io/BlogSite/post/java/java-lesson2/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-03-31T02:27:00+11:00"><meta property="article:modified_time" content="2023-03-31T02:27:00+11:00"><meta property="og:site_name" content="Jack Wang"><meta name=twitter:card content="summary"><meta name=twitter:title content="Java Lesson2 Note"><meta name=twitter:description content="Introduction Today will introduce Java&rsquo;s arrays and their applied algorithms
+今天将介绍Java的数组及其应用的算法
+Content 3. 数 组 数组(Array)，是多个相同类型数据按一定顺序排列的集合， 并使用一个名字命名，并通过编号的方式对这些数据进行统一管理。
+数组里的相关概念
+Array name Elements Index length 3.1 一维数组的使用 用以下的方式熟悉一维数组
+一维数组的声明和初始化 如何调用数组的指定位置的元素 如何获取数组的长度 如何遍历数组 数组元素的默认初始化值 3.2 多维数组的使用 对于二维数组的理解，我们可以看成是一维数组array1 又作为另一个一维数组array2 的元素而存在。 其实，从数组底层的运行机制来看，其实没有多维数组。
+public class ArrayTest2 { public static void main(String[] args) { //1. 二维数组的声明和初始化 int[] arr = new int[]{1,2,3}; // 静态初始化 int[][] arr1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // 动态初始化1 String[][] arr2 = new String[3][2]; // 动态初始化2 String[][] arr3 = new String[3][]; // 错误的情况 // String[][] arr4 = new String[][]; // String[][] arr5 = new String[][4]; // String[][] arr6 = new String[4][3]{{1,2,3},{4,5,6},{7,8,9}}; // 正确的情况： int arr4[][] = new int[][]{{1,2,3},{4,5,12,6},{7,8,9}}; int[] arr5[] = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr6 = {{1,2,3},{4,5,6},{7,8,9}}; //2."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://jackywang96.github.io/BlogSite/post/"},{"@type":"ListItem","position":2,"name":"Java Lesson2 Note","item":"https://jackywang96.github.io/BlogSite/post/java/java-lesson2/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Java Lesson2 Note","name":"Java Lesson2 Note","description":"Introduction Today will introduce Java\u0026rsquo;s arrays and their applied algorithms\n今天将介绍Java的数组及其应用的算法\nContent 3. 数 组 数组(Array)，是多个相同类型数据按一定顺序排列的集合， 并使用一个名字命名，并通过编号的方式对这些数据进行统一管理。\n数组里的相关概念\nArray name Elements Index length 3.1 一维数组的使用 用以下的方式熟悉一维数组\n一维数组的声明和初始化 如何调用数组的指定位置的元素 如何获取数组的长度 如何遍历数组 数组元素的默认初始化值 3.2 多维数组的使用 对于二维数组的理解，我们可以看成是一维数组array1 又作为另一个一维数组array2 的元素而存在。 其实，从数组底层的运行机制来看，其实没有多维数组。\npublic class ArrayTest2 { public static void main(String[] args) { //1. 二维数组的声明和初始化 int[] arr = new int[]{1,2,3}; // 静态初始化 int[][] arr1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // 动态初始化1 String[][] arr2 = new String[3][2]; // 动态初始化2 String[][] arr3 = new String[3][]; // 错误的情况 // String[][] arr4 = new String[][]; // String[][] arr5 = new String[][4]; // String[][] arr6 = new String[4][3]{{1,2,3},{4,5,6},{7,8,9}}; // 正确的情况： int arr4[][] = new int[][]{{1,2,3},{4,5,12,6},{7,8,9}}; int[] arr5[] = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr6 = {{1,2,3},{4,5,6},{7,8,9}}; //2.","keywords":[],"articleBody":"Introduction Today will introduce Java’s arrays and their applied algorithms\n今天将介绍Java的数组及其应用的算法\nContent 3. 数 组 数组(Array)，是多个相同类型数据按一定顺序排列的集合， 并使用一个名字命名，并通过编号的方式对这些数据进行统一管理。\n数组里的相关概念\nArray name Elements Index length 3.1 一维数组的使用 用以下的方式熟悉一维数组\n一维数组的声明和初始化 如何调用数组的指定位置的元素 如何获取数组的长度 如何遍历数组 数组元素的默认初始化值 3.2 多维数组的使用 对于二维数组的理解，我们可以看成是一维数组array1 又作为另一个一维数组array2 的元素而存在。 其实，从数组底层的运行机制来看，其实没有多维数组。\npublic class ArrayTest2 { public static void main(String[] args) { //1. 二维数组的声明和初始化 int[] arr = new int[]{1,2,3}; // 静态初始化 int[][] arr1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; // 动态初始化1 String[][] arr2 = new String[3][2]; // 动态初始化2 String[][] arr3 = new String[3][]; // 错误的情况 // String[][] arr4 = new String[][]; // String[][] arr5 = new String[][4]; // String[][] arr6 = new String[4][3]{{1,2,3},{4,5,6},{7,8,9}}; // 正确的情况： int arr4[][] = new int[][]{{1,2,3},{4,5,12,6},{7,8,9}}; int[] arr5[] = new int[][]{{1,2,3},{4,5,6},{7,8,9}}; int[][] arr6 = {{1,2,3},{4,5,6},{7,8,9}}; //2. 如何调用数组的指定位置的元素 System.out.println(arr1[0][1]); //2 System.out.println(arr2[1][1]); //null //4. 如何遍历二维数组 for(int i = 0;i \u003c arr4.length;i++){ for(int j = 0;j \u003c arr4[i].length;j++){ System.out.print(arr4[i][ j] + \" \"); } System.out.println(); } } 3.2 Arrays 工具类的使用 java.util.Arrays 类即为操作数组的工具类，包含了用来操作数组（比如排序和搜索）的各种方法。\npublic class ArrayTest4 { public static void main(String[] args) { //1.boolean equals(int[] a,int[] b) 判断两个数组是否相等。 int[] arr1 = new int[]{1,2,3,4}; int[] arr2 = new int[]{1,2,9,3}; boolean isEquals = Arrays.equals(arr1, arr2); System.out.println(isEquals); //2.String toString(int[] a) 输出数组信息。 System.out.println(Arrays.toString(arr1)); //3.void fill(int[] a,int val) 将指定值填充到数组之中。 Arrays.fill(arr1, 10); System.out.println(Arrays.toString(arr1)); //4.void sort(int[] a) 对数组进行排序。 Arrays.sort(arr2); System.out.println(Arrays.toString(arr2)); //5.int binarySearch(int[] a,int key) 对排序后的数组进行二分 法检索指定的值。 int[] arr3 = new int[]{43,32,76,92,-65,85,71,-42}; int index = Arrays.binarySearch(arr3, 210); if(index \u003e= 0){ System.out.println(index); }else{ System.err.println(\" 未找到。\"); } } }\n3.3 数组使用中的常见异常 数组角标越界的异常:ArrayIndexOutOfBoundsException\nfor(int i = 0;i \u003c= arr.length;i++){ // System.out.println(arr[i]); // } 空指针异常:NullPointerException\nString[] arr3 = new String[]{\"AA\",\"QQ\",\"YY\",\"XX\",\"TT\",\"KK\"}; // arr3[0] = null; // System.out.println(arr3[0].toString()); 3.4 数组中涉及到的常见算法 选择排序 直接选择排序、堆排序 交换排序 冒泡排序、快速排序 插入排序 直接插入排序、折半插入排序、Shell 排序 归并排序 桶式排序 基数排序 ","wordCount":"258","inLanguage":"en","datePublished":"2023-03-31T02:27:00+11:00","dateModified":"2023-03-31T02:27:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jackywang96.github.io/BlogSite/post/java/java-lesson2/"},"publisher":{"@type":"Organization","name":"Jack Wang","logo":{"@type":"ImageObject","url":"https://jackywang96.github.io/BlogSite/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://jackywang96.github.io/BlogSite/ accesskey=h title="Home (Alt + H)">Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://jackywang96.github.io/BlogSite/archives/ title=Posts><span>Posts</span></a></li><li><a href=https://jackywang96.github.io/BlogSite/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://jackywang96.github.io/BlogSite/>Home</a>&nbsp;»&nbsp;<a href=https://jackywang96.github.io/BlogSite/post/>Posts</a></div><h1 class=post-title>Java Lesson2 Note</h1><div class=post-meta><span title='2023-03-31 02:27:00 +1100 AEDT'>March 31, 2023</span>&nbsp;·&nbsp;2 min</div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#introduction aria-label=Introduction>Introduction</a></li><li><a href=#content aria-label=Content>Content</a><ul><li><a href=#3-%e6%95%b0-%e7%bb%84 aria-label="3. 数 组">3. 数 组</a><ul><li><a href=#31-%e4%b8%80%e7%bb%b4%e6%95%b0%e7%bb%84%e7%9a%84%e4%bd%bf%e7%94%a8 aria-label="3.1 一维数组的使用">3.1 一维数组的使用</a></li><li><a href=#32-%e5%a4%9a%e7%bb%b4%e6%95%b0%e7%bb%84%e7%9a%84%e4%bd%bf%e7%94%a8 aria-label="3.2 多维数组的使用">3.2 多维数组的使用</a></li><li><a href=#32-arrays-%e5%b7%a5%e5%85%b7%e7%b1%bb%e7%9a%84%e4%bd%bf%e7%94%a8 aria-label="3.2 Arrays 工具类的使用">3.2 Arrays 工具类的使用</a></li><li><a href=#33-%e6%95%b0%e7%bb%84%e4%bd%bf%e7%94%a8%e4%b8%ad%e7%9a%84%e5%b8%b8%e8%a7%81%e5%bc%82%e5%b8%b8 aria-label="3.3 数组使用中的常见异常">3.3 数组使用中的常见异常</a></li><li><a href=#34-%e6%95%b0%e7%bb%84%e4%b8%ad%e6%b6%89%e5%8f%8a%e5%88%b0%e7%9a%84%e5%b8%b8%e8%a7%81%e7%ae%97%e6%b3%95 aria-label="3.4 数组中涉及到的常见算法">3.4 数组中涉及到的常见算法</a></li></ul></li></ul></li></ul></div></details></div><div class=post-content><h1 id=introduction>Introduction<a hidden class=anchor aria-hidden=true href=#introduction>#</a></h1><p>Today will introduce Java&rsquo;s arrays and their applied algorithms</p><p>今天将介绍Java的数组及其应用的算法</p><h1 id=content>Content<a hidden class=anchor aria-hidden=true href=#content>#</a></h1><h2 id=3-数-组>3. 数 组<a hidden class=anchor aria-hidden=true href=#3-数-组>#</a></h2><p>数组(Array)，是多个相同类型数据按一定顺序排列的集合，
+并使用一个名字命名，并通过编号的方式对这些数据进行统一管理。</p><p>数组里的相关概念</p><ol><li>Array name</li><li>Elements</li><li>Index</li><li>length</li></ol><h3 id=31-一维数组的使用>3.1 一维数组的使用<a hidden class=anchor aria-hidden=true href=#31-一维数组的使用>#</a></h3><p>用以下的方式熟悉一维数组</p><pre><code>一维数组的声明和初始化
+
+如何调用数组的指定位置的元素
+
+如何获取数组的长度
+
+如何遍历数组
+
+数组元素的默认初始化值
+</code></pre><h3 id=32-多维数组的使用>3.2 多维数组的使用<a hidden class=anchor aria-hidden=true href=#32-多维数组的使用>#</a></h3><p>对于二维数组的理解，我们可以看成是一维数组array1 又作为另一个一维数组array2 的元素而存在。
+其实，从数组底层的运行机制来看，其实没有多维数组。</p><pre><code>    public class ArrayTest2 {
+    public static void main(String[] args) {
+        //1. 二维数组的声明和初始化
+        int[] arr = new int[]{1,2,3};
+
+        // 静态初始化
+        int[][] arr1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+
+        // 动态初始化1
+        String[][] arr2 = new String[3][2];
+
+        // 动态初始化2
+        String[][] arr3 = new String[3][];
+
+        // 错误的情况
+        // String[][] arr4 = new String[][];
+        // String[][] arr5 = new String[][4];
+        // String[][] arr6 = new String[4][3]{{1,2,3},{4,5,6},{7,8,9}};
+
+        // 正确的情况：
+        int arr4[][] = new int[][]{{1,2,3},{4,5,12,6},{7,8,9}};
+        int[] arr5[] = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+
+        int[][] arr6 = {{1,2,3},{4,5,6},{7,8,9}};
+
+        //2. 如何调用数组的指定位置的元素
+        System.out.println(arr1[0][1]); //2
+        System.out.println(arr2[1][1]); //null
+
+        //4. 如何遍历二维数组
+        for(int i = 0;i &lt; arr4.length;i++){
+        for(int j = 0;j &lt; arr4[i].length;j++){
+        System.out.print(arr4[i][ j] + &quot; &quot;);
+        }
+        System.out.println();
+    }
+    }
+</code></pre><h3 id=32-arrays-工具类的使用>3.2 Arrays 工具类的使用<a hidden class=anchor aria-hidden=true href=#32-arrays-工具类的使用>#</a></h3><p>java.util.Arrays 类即为操作数组的工具类，包含了用来操作数组（比如排序和搜索）的各种方法。</p><pre><code>public class ArrayTest4 {
+    public static void main(String[] args) {
+
+        //1.boolean equals(int[] a,int[] b) 判断两个数组是否相等。
+        int[] arr1 = new int[]{1,2,3,4};
+        int[] arr2 = new int[]{1,2,9,3};
+        boolean isEquals = Arrays.equals(arr1, arr2);
+        System.out.println(isEquals);
+
+        //2.String toString(int[] a) 输出数组信息。
+        System.out.println(Arrays.toString(arr1));
+
+        //3.void fill(int[] a,int val) 将指定值填充到数组之中。
+        Arrays.fill(arr1, 10);
+        System.out.println(Arrays.toString(arr1));
+
+        //4.void sort(int[] a) 对数组进行排序。
+        Arrays.sort(arr2);
+        System.out.println(Arrays.toString(arr2));
+
+        //5.int binarySearch(int[] a,int key) 对排序后的数组进行二分
+        法检索指定的值。
+        int[] arr3 = new int[]{43,32,76,92,-65,85,71,-42};
+        int index = Arrays.binarySearch(arr3, 210);
+        if(index &gt;= 0){
+            System.out.println(index);
+        }else{
+            System.err.println(&quot; 未找到。&quot;);
+        }
+    }
+</code></pre><p>}</p><h3 id=33-数组使用中的常见异常>3.3 数组使用中的常见异常<a hidden class=anchor aria-hidden=true href=#33-数组使用中的常见异常>#</a></h3><ol><li><p>数组角标越界的异常:ArrayIndexOutOfBoundsException</p><pre><code> for(int i = 0;i &lt;= arr.length;i++){
+ // System.out.println(arr[i]);
+ // }
+</code></pre></li><li><p>空指针异常:NullPointerException</p><pre><code> String[] arr3 = new String[]{&quot;AA&quot;,&quot;QQ&quot;,&quot;YY&quot;,&quot;XX&quot;,&quot;TT&quot;,&quot;KK&quot;};
+ // arr3[0] = null;
+ // System.out.println(arr3[0].toString());
+</code></pre></li></ol><h3 id=34-数组中涉及到的常见算法>3.4 数组中涉及到的常见算法<a hidden class=anchor aria-hidden=true href=#34-数组中涉及到的常见算法>#</a></h3><pre><code>选择排序
+直接选择排序、堆排序
+交换排序
+冒泡排序、快速排序
+插入排序
+直接插入排序、折半插入排序、Shell 排序
+归并排序
+桶式排序
+基数排序</code></pre></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://jackywang96.github.io/BlogSite/post/java/java-lesson3/><span class=title>« Prev</span><br><span>Java Lesson3 Note</span></a>
+<a class=next href=https://jackywang96.github.io/BlogSite/post/java/javal-lesson1/><span class=title>Next »</span><br><span>Java Lesson1 Note</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://jackywang96.github.io/BlogSite/>Jack Wang</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
