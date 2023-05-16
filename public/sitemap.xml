@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackywang96.github.io/BlogSite/</loc>
-    <lastmod>2023-04-01T01:03:20+11:00</lastmod>
+    <loc>https://jackywang96.github.io/BlogSite/post/automation-test/automation-test/</loc>
+    <lastmod>2023-05-16T22:05:21+10:00</lastmod>
   </url><url>
-    <loc>https://jackywang96.github.io/BlogSite/post/java/java-lesson3/</loc>
-    <lastmod>2023-04-01T01:03:20+11:00</lastmod>
+    <loc>https://jackywang96.github.io/BlogSite/</loc>
+    <lastmod>2023-05-16T22:05:21+10:00</lastmod>
   </url><url>
     <loc>https://jackywang96.github.io/BlogSite/post/</loc>
+    <lastmod>2023-05-16T22:05:21+10:00</lastmod>
+  </url><url>
+    <loc>https://jackywang96.github.io/BlogSite/post/java/java-lesson3/</loc>
     <lastmod>2023-04-01T01:03:20+11:00</lastmod>
   </url><url>
     <loc>https://jackywang96.github.io/BlogSite/post/java/java-lesson2/</loc>
@@ -23,8 +26,17 @@
     <loc>https://jackywang96.github.io/BlogSite/post/big-data/spark-learning-1/</loc>
     <lastmod>2023-03-27T02:52:22+11:00</lastmod>
   </url><url>
+    <loc>https://jackywang96.github.io/BlogSite/posts/</loc>
+    <lastmod>2023-03-15T09:46:07+11:00</lastmod>
+  </url><url>
+    <loc>https://jackywang96.github.io/BlogSite/posts/react/</loc>
+    <lastmod>2023-03-15T09:46:07+11:00</lastmod>
+  </url><url>
     <loc>https://jackywang96.github.io/BlogSite/post/tailwindcss/</loc>
     <lastmod>2023-02-14T00:55:45+11:00</lastmod>
+  </url><url>
+    <loc>https://jackywang96.github.io/BlogSite/posts/tailwincss/</loc>
+    <lastmod>2023-02-07T17:07:05+11:00</lastmod>
   </url><url>
     <loc>https://jackywang96.github.io/BlogSite/post/fast-slow-pointer-floyd-circle-method/fast-slow-pointer/</loc>
     <lastmod>2023-01-30T23:34:06+11:00</lastmod>
