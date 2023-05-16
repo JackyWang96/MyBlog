@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Jack Wang</title>
     <link>https://jackywang96.github.io/BlogSite/</link>
     <description>Recent content on Jack Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 May 2023 22:05:21 +1000</lastBuildDate><atom:link href="https://jackywang96.github.io/BlogSite/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Automation Test Note1</title>
-      <link>https://jackywang96.github.io/BlogSite/post/automation-test/automation-test/</link>
-      <pubDate>Tue, 16 May 2023 22:05:21 +1000</pubDate>
-      
-      <guid>https://jackywang96.github.io/BlogSite/post/automation-test/automation-test/</guid>
-      <description>Introduction Starting today, I will begin my study of software testing. I will be documenting my notes after each learning session and sharing them as blog posts. 今天开始我将开始Java基础课程的教授。我会记录我每次备课的note并作为帖子发送至我的blog。
-Content 1. What is Cookie and Session? What&amp;rsquo;s the different between Cookie, Session, Cache 在许多 web 应用中，session 信息会被储存在服务器端，而 cookie 中则储存一个 session ID，服务器通过这个 session ID 来识别特定用户
-Session need to reply on cookie,cookie can live independently
-- 1.Cookie: 1.1 Cookie，有时也用其复数形式Cookies。类型为“小型文本文件”，是某些网站为了辨别用户身份，进行Session跟踪而储存在用户本地终端上的数据
-1.2 Reason: web程序是使用HTTP协议传输的，而HTTP协议是无状态的协议，对于事务处理没有记忆能力。 缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。 另一方面，在服务器不需要先前信息时它的应答就较快。</description>
-    </item>
-    
+    <lastBuildDate>Sat, 01 Apr 2023 01:03:20 +1100</lastBuildDate><atom:link href="https://jackywang96.github.io/BlogSite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java Lesson3 Note</title>
       <link>https://jackywang96.github.io/BlogSite/post/java/java-lesson3/</link>
@@ -94,15 +81,6 @@ Apache Hadoop: Apache Hadoop is an open-source, distributed computing framework 
     </item>
     
     <item>
-      <title>React</title>
-      <link>https://jackywang96.github.io/BlogSite/posts/react/</link>
-      <pubDate>Wed, 15 Mar 2023 09:46:07 +1100</pubDate>
-      
-      <guid>https://jackywang96.github.io/BlogSite/posts/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>TailwindCSS</title>
       <link>https://jackywang96.github.io/BlogSite/post/tailwindcss/</link>
       <pubDate>Tue, 14 Feb 2023 00:55:45 +1100</pubDate>
@@ -111,15 +89,6 @@ Apache Hadoop: Apache Hadoop is an open-source, distributed computing framework 
       <description>Introduction Tailwind CSS is a CSS styling library that provides us with all the building blocks we need to build custom designs without using custom styles.
 Feature Tailwind will automatically delete all unused CSS when building production files, so its size in the actual production environment is very small, and it is considered to be the CSS style library with the most design sense.
 Installation //Install Tailwind CSS npm install -D tailwindcss npx tailwindcss init //Add the paths to all of your template files in your tailwind.</description>
-    </item>
-    
-    <item>
-      <title>TailwinCSS</title>
-      <link>https://jackywang96.github.io/BlogSite/posts/tailwincss/</link>
-      <pubDate>Tue, 07 Feb 2023 17:07:05 +1100</pubDate>
-      
-      <guid>https://jackywang96.github.io/BlogSite/posts/tailwincss/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -174,14 +143,6 @@ right join (right join): Returns all records including all records in the right 
 ✉️ Contact me at JackyWangMel96@gmail.com</description>
     </item>
     
-    <item>
-      <title>Posts</title>
-      <link>https://jackywang96.github.io/BlogSite/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackywang96.github.io/BlogSite/archives/</guid>
-      <description>archives</description>
-    </item>
     
   </channel>
 </rss>
